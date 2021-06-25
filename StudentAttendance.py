@@ -1,7 +1,6 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[2]:
 
 
 #importing required libraries
@@ -12,8 +11,6 @@ import time
 import cv2
 
 
-# In[3]:
-
 
 #configuring credentials-----
 client = boto3.client('rekognition',
@@ -23,7 +20,6 @@ client = boto3.client('rekognition',
                        region_name = 'ap-south-1')
 
 
-# In[12]:
 
 
 #capture images for every 1 hour and store the images with current date and time -----
@@ -55,8 +51,8 @@ for j in range (0,6):
         print('Not identified')
         
     else:
-    str1 = response['CustomLabels'][0]['Name']
-    print(str1)
+        str1 = response['CustomLabels'][0]['Name']
+        print(str1)
 #Update the attendance of recognized student in dynamoDB by calling API-----
         url = "provide your add attendance api url link/test?Rollno=" +str1
         resp = requests.get(url)
@@ -67,13 +63,7 @@ for j in range (0,6):
     time.sleep(3600)
 
 
-# In[ ]:
 
-
-
-
-
-# In[ ]:
 
 
 
