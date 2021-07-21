@@ -1,4 +1,4 @@
-
+#This project was developed by Brijesh Vishwakarma for the Certification Program  offered by SmartInternz an online learning platform.
 #importing required libraries
 import boto3
 import requests
